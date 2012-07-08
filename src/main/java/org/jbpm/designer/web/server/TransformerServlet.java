@@ -15,12 +15,10 @@
  */
 package org.jbpm.designer.web.server;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.net.HttpURLConnection;
@@ -73,18 +71,16 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.jbpm.designer.Base64EncodingUtil;
 import org.jbpm.designer.bpmn2.resource.JBPMBpmn2ResourceFactoryImpl;
 import org.jbpm.designer.bpmn2.resource.JBPMBpmn2ResourceImpl;
 import org.jbpm.designer.web.batikprotocolhandler.GuvnorParsedURLProtocolHandler;
 import org.jbpm.designer.web.profile.IDiagramProfile;
-import org.jbpm.designer.web.profile.IDiagramProfileService;
 import org.jbpm.designer.web.profile.impl.ExternalInfo;
 import org.jbpm.designer.web.profile.impl.JbpmProfileImpl;
-import org.jbpm.designer.web.profile.impl.ProfileServiceImpl;
 import org.jbpm.migration.JbpmMigration;
 
 import org.apache.commons.codec.binary.Base64;
-import sun.misc.BASE64Encoder;
 
 /** 
  * 
@@ -137,7 +133,7 @@ public class TransformerServlet extends HttpServlet {
             		t.transcode(input, output);
 	                resp.setCharacterEncoding("UTF-8");
                 	resp.setContentType("text/plain");
-                	resp.getWriter().write("<object data=\"data:application/pdf;base64," + Base64.encodeBase64(bout.toByteArray()) +  "\" type=\"application/pdf\"></object>");
+                	resp.getWriter().write("<object data=\"data:application/pdf;base64," + Base64EncodingUtil.encode(bout.toByteArray()) +  "\" type=\"application/pdf\"></object>");
             	} else {
 	                storeToGuvnor(uuid, profile, formattedSvg, rawSvg,
 	                        transformto, processid);
@@ -172,8 +168,7 @@ public class TransformerServlet extends HttpServlet {
                 	t.transcode(input, output);
                 	resp.setCharacterEncoding("UTF-8");
                 	resp.setContentType("text/plain");
-                	BASE64Encoder enc = new sun.misc.BASE64Encoder();
-                	resp.getWriter().write("<img src=\"data:image/png;base64," + enc.encode(bout.toByteArray()) + "\">");
+                	resp.getWriter().write("<img src=\"data:image/png;base64," + Base64EncodingUtil.encode(bout.toByteArray()) + "\">");
                 } else {
                 	ParsedURL.registerHandler(new GuvnorParsedURLProtocolHandler(profile));
                     storeToGuvnor(uuid, profile, formattedSvg, rawSvg,
