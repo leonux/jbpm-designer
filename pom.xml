@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jboss.drools</groupId>
   <artifactId>jbpm-designer</artifactId>
-  <version>2.4.1-SNAPSHOT</version>
+  <version>2.4.0.Beta1</version>
   <packaging>war</packaging>
 
   <name>jBPM Designer</name>  
@@ -31,8 +31,8 @@
   </scm>
   
   <properties>
-    <mvel.version>2.1.0.drools8</mvel.version>
-    <drools.version>5.4.0.Final</drools.version>
+    <mvel.version>2.1.3.Final</mvel.version>
+    <drools.version>5.5.0-SNAPSHOT</drools.version>
     <jbpm.version>5.4.0-SNAPSHOT</jbpm.version>
     <batik.version>1.6-1</batik.version>
   </properties>
