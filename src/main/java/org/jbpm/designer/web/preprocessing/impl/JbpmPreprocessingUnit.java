@@ -199,6 +199,7 @@ public class JbpmPreprocessingUnit implements IDiagramPreprocessingUnit {
                 	for(Map.Entry<String, List<String>> entry : configInfo.entrySet()) {
                         packageName = entry.getKey();
                 	}
+                	// GUVNOR JbpmPreprocessingUnit
                 	icon = ExternalInfo.getExternalProtocol(profile) + "://" + ExternalInfo.getExternalHost(profile) +
                             "/" + profile.getExternalLoadURLSubdomain().substring(0, profile.getExternalLoadURLSubdomain().indexOf("/")) +
                             "/rest/packages/" + URLEncoder.encode(packageName, "UTF-8") + "/assets/defaultservicenodeicon/binary/";
@@ -249,6 +250,7 @@ public class JbpmPreprocessingUnit implements IDiagramPreprocessingUnit {
                 if(configNames != null) {
                     for(String configName : configNames) {
                     	try {
+                    	    //GUVNOR JbpmPreprocessingUnit
 	                    	String configURL = ExternalInfo.getExternalProtocol(profile) + "://" + ExternalInfo.getExternalHost(profile) +
 	                        "/" + profile.getExternalLoadURLSubdomain().substring(0, profile.getExternalLoadURLSubdomain().indexOf("/")) +
 	                        "/rest/packages/" + URLEncoder.encode(packageName, "UTF-8") + "/assets/" + configName + "/source/";
@@ -269,6 +271,7 @@ public class JbpmPreprocessingUnit implements IDiagramPreprocessingUnit {
     }
     
     private void setupFormWidgets(IDiagramProfile profile, HttpServletRequest req) {
+        // GUVNOR JbpmPreprocessingUnit
     	String formWidgetsPackageURL = ExternalInfo.getExternalProtocol(profile)
                 + "://"
                 + ExternalInfo.getExternalHost(profile)
@@ -320,6 +323,7 @@ public class JbpmPreprocessingUnit implements IDiagramPreprocessingUnit {
     }
     
     private void setupCustomEditors(IDiagramProfile profile, HttpServletRequest req) {
+        // GUVNOR JbpmPreprocessingUnit
     	String customEditorsURL = ExternalInfo.getExternalProtocol(profile)
                 + "://"
                 + ExternalInfo.getExternalHost(profile)
@@ -369,6 +373,7 @@ public class JbpmPreprocessingUnit implements IDiagramPreprocessingUnit {
     }
     
     private Map<String, ThemeInfo> setupThemes(IDiagramProfile profile, HttpServletRequest req) {
+        // GUVNOR JbpmPreprocessingUnit
     	Map<String, ThemeInfo> themeData = new HashMap<String, JbpmPreprocessingUnit.ThemeInfo>();
     	String themesURL = ExternalInfo.getExternalProtocol(profile)
                 + "://"
@@ -468,6 +473,7 @@ public class JbpmPreprocessingUnit implements IDiagramPreprocessingUnit {
     }
     
     private void setupDefaultIcons(String[] info, IDiagramProfile profile) {
+        // GUVNOR JbpmPreprocessingUnit
     	if(info != null && info.length == 2) {
     		try {
 	    		String pkg = URLEncoder.encode(info[0], "UTF-8");
@@ -597,6 +603,7 @@ public class JbpmPreprocessingUnit implements IDiagramPreprocessingUnit {
     }
     
     private void setupDefaultWorkitemConfigs(String uuid, List<String> packageNames, IDiagramProfile profile) {
+        // GUVNOR JbpmPreprocessingUnit
     	boolean gotPackage = false;
     	String pkg = "";
     	for(String nextPackage : packageNames) {
@@ -731,6 +738,7 @@ public class JbpmPreprocessingUnit implements IDiagramPreprocessingUnit {
     }
     
     private List<String> findPackages(String uuid, IDiagramProfile profile) {
+        // GUVNOR JbpmPreprocessingUnit
         List<String> packages = new ArrayList<String>();
         String packagesURL = ExternalInfo.getExternalProtocol(profile) + "://" + ExternalInfo.getExternalHost(profile) +
         "/" + profile.getExternalLoadURLSubdomain().substring(0, profile.getExternalLoadURLSubdomain().indexOf("/")) +
