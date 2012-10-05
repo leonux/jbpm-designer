@@ -30,17 +30,57 @@
   </scm>
 
   <properties>
+    <!-- having the properties defined here helps with integration tests -->
     <mvel.version>2.1.3.Final</mvel.version>
     <drools.version>5.5.0-SNAPSHOT</drools.version>
     <jbpm.version>5.4.0-SNAPSHOT</jbpm.version>
     <batik.version>1.6-1</batik.version>
     <log4j.version>1.6.2</log4j.version>
+    <jbpm.migration.version>0.11</jbpm.migration.version>
+    <closure.compiler.version>r1741</closure.compiler.version>
+    <eclipse.bpmn2.version>0.7.0.010</eclipse.bpmn2.version>
+    <json.version>20090211</json.version>
+    <jbpt.version>0.1.0</jbpt.version>
+    <jdom.version>1.1</jdom.version>
+    <velocity.version>1.6.4</velocity.version>
+    <supercsv.version>1.52</supercsv.version>
+    <xmlgraphics.version>1.4</xmlgraphics.version>
+    <fop.version>0.95</fop.version>
+    <xerces.version>2.9.1</xerces.version>
+    <jaxb.version>2.2</jaxb.version>
+    <atlas.version>1.0.0</atlas.version>
+    <xstream.version>1.3.1</xstream.version>
+    <xmappr.version>0.9.3</xmappr.version>
+    <servlet.version>2.5</servlet.version>
+    <mail.version>1.4.1</mail.version>
+    <rhino.js.version>1.7R2</rhino.js.version>
+    <xalan.version>2.7.1</xalan.version>
+    <jackson.version>1.7.4</jackson.version>
+    <antlr.stringtemplate.version>3.2.1</antlr.stringtemplate.version>
+    <antlr.version>2.7.7</antlr.version>
+    <eclipse.osgi.version>3.5.0.v20090520</eclipse.osgi.version>
+    <avalon.framework.version>4.1.4</avalon.framework.version>
+    <joda.time.version>1.6</joda.time.version>
+    <abdera.version>1.1.2</abdera.version>
+    <commons.collections.version>3.2.1</commons.collections.version>
+    <commons.codec.version>1.5</commons.codec.version>
+    <commons.configuration.version>1.6</commons.configuration.version>
+    <commons.httpclient.version>3.1</commons.httpclient.version>
+    <commons.fileupload.version>1.2.1</commons.fileupload.version>
+    <commons.lang.version>2.5</commons.lang.version>
+    <jbpm.simulation.version>1.0.0-SNAPSHOT</jbpm.simulation.version>
+    <hib.jpa.2.api.version>1.0.1.Final</hib.jpa.2.api.version>
+    <hib.entitymanager.version>3.4.0.GA</hib.entitymanager.version>
+    <hib.core.version>3.3.2.GA</hib.core.version>
+    <hib.envers.version>1.2.3-hibernate-3.3</hib.envers.version>
 
     <!-- test properties -->
+    <junit.version>4.9</junit.version>
+    <h2.version>1.3.167</h2.version>
     <resteasy.version>1.2.1.GA</resteasy.version>
     <guvnor.test.version>5.5.0-SNAPSHOT</guvnor.test.version>
     <as7.version>7.1.1.Final</as7.version>
-    <shrinkwrap.override.version>2.0.0-alpha-2</shrinkwrap.override.version>
+    <shrinkwrap.override.version>2.0.0-alpha-4</shrinkwrap.override.version>
   </properties>
 
   <dependencies>
@@ -96,7 +136,7 @@
     <dependency>
       <groupId>org.jbpm.jbpm5</groupId>
       <artifactId>jbpmmigration</artifactId>
-      <version>0.11</version>
+      <version>${jbpm.migration.version}</version>
       <exclusions>
         <exclusion>
           <groupId>log4j</groupId>
@@ -133,37 +173,37 @@
     <dependency>
       <groupId>com.google.javascript</groupId>
       <artifactId>closure-compiler</artifactId>
-      <version>r1741</version>
+      <version>${closure.compiler.version}</version>
     </dependency>
 
     <!-- bpmn2 libs -->
     <dependency>
       <groupId>org.eclipse</groupId>
       <artifactId>org.eclipse.bpmn2</artifactId>
-      <version>0.7.0.010</version>
+      <version>${eclipse.bpmn2.version}</version>
     </dependency>
 
     <!-- war libs -->
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
-      <version>20090211</version>
+      <version>${json.version}</version>
     </dependency>
     <dependency>
       <groupId>jbpt</groupId>
       <artifactId>jbpt</artifactId>
-      <version>0.1.0</version>
+      <version>${jbpt.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.jdom</groupId>
       <artifactId>jdom</artifactId>
-      <version>1.1</version>
+      <version>${jdom.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.velocity</groupId>
       <artifactId>velocity</artifactId>
-      <version>1.6.4</version>
+      <version>${velocity.version}</version>
       <exclusions>
         <exclusion>
           <groupId>oro</groupId>
@@ -174,12 +214,12 @@
     <dependency>
       <groupId>org.supercsv</groupId>
       <artifactId>SuperCSV</artifactId>
-      <version>1.52</version>
+      <version>${supercsv.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.xmlgraphics</groupId>
       <artifactId>xmlgraphics-commons</artifactId>
-      <version>1.4</version>
+      <version>${xmlgraphics.version}</version>
     </dependency>
     <dependency>
       <groupId>batik</groupId>
@@ -222,7 +262,7 @@
     <dependency>
       <groupId>org.apache.xmlgraphics</groupId>
       <artifactId>fop</artifactId>
-      <version>0.95</version>
+      <version>${fop.version}</version>
       <exclusions>
         <exclusion>
           <groupId>org.apache.xmlgraphics</groupId>
@@ -285,12 +325,12 @@
     <dependency>
       <groupId>xerces</groupId>
       <artifactId>xercesImpl</artifactId>
-      <version>2.9.1</version>
+      <version>${xerces.version}</version>
     </dependency>
     <dependency>
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb-impl</artifactId>
-      <version>2.2</version>
+      <version>${jaxb.version}</version>
       <exclusions>
         <exclusion>
           <groupId>javax.xml.bind</groupId>
@@ -301,17 +341,17 @@
     <dependency>
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb1-impl</artifactId>
-      <version>2.2</version>
+      <version>${jaxb.version}</version>
     </dependency>
     <dependency>
       <groupId>de.hpi</groupId>
       <artifactId>atlas</artifactId>
-      <version>1.0.0</version>
+      <version>${atlas.version}</version>
     </dependency>
     <dependency>
       <groupId>com.thoughtworks.xstream</groupId>
       <artifactId>xstream</artifactId>
-      <version>1.3.1</version>
+      <version>${xstream.version}</version>
       <exclusions>
         <exclusion>
           <groupId>xpp3</groupId>
@@ -322,7 +362,7 @@
     <dependency>
       <groupId>org.xmappr</groupId>
       <artifactId>xmappr</artifactId>
-      <version>0.9.3</version>
+      <version>${xmappr.version}</version>
       <exclusions>
         <exclusion>
           <groupId>org.codehaus.woodstox</groupId>
@@ -348,13 +388,13 @@
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
+      <version>${servlet.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>javax.mail</groupId>
       <artifactId>mail</artifactId>
-      <version>1.4.1</version>
+      <version>${mail.version}</version>
       <exclusions>
         <exclusion>
           <groupId>javax.activation</groupId>
@@ -365,69 +405,69 @@
     <dependency>
       <groupId>rhino</groupId>
       <artifactId>js</artifactId>
-      <version>1.7R2</version>
+      <version>${rhino.js.version}</version>
     </dependency>
     <dependency>
       <groupId>xalan</groupId>
       <artifactId>xalan</artifactId>
-      <version>2.7.1</version>
+      <version>${xalan.version}</version>
     </dependency>
     <dependency>
       <groupId>org.codehaus.jackson</groupId>
       <artifactId>jackson-core-asl</artifactId>
-      <version>1.7.4</version>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>org.codehaus.jackson</groupId>
       <artifactId>jackson-mapper-asl</artifactId>
-      <version>1.7.4</version>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>org.antlr</groupId>
       <artifactId>stringtemplate</artifactId>
-      <version>3.2.1</version>
+      <version>${antlr.stringtemplate.version}</version>
     </dependency>
     <dependency>
       <groupId>antlr</groupId>
       <artifactId>antlr</artifactId>
-      <version>2.7.7</version>
+      <version>${antlr.version}</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse</groupId>
       <artifactId>osgi</artifactId>
-      <version>3.5.0.v20090520</version>
+      <version>${eclipse.osgi.version}</version>
     </dependency>
     <dependency>
       <groupId>avalon-framework</groupId>
       <artifactId>avalon-framework</artifactId>
-      <version>4.1.4</version>
+      <version>${avalon.framework.version}</version>
     </dependency>
     <dependency>
       <groupId>joda-time</groupId>
       <artifactId>joda-time</artifactId>
-      <version>1.6</version>
+      <version>${joda.time.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.abdera</groupId>
       <artifactId>abdera-i18n</artifactId>
-      <version>1.1.2</version>
+      <version>${abdera.version}</version>
     </dependency>
 
     <!-- commons -->
     <dependency>
       <groupId>commons-collections</groupId>
       <artifactId>commons-collections</artifactId>
-      <version>3.2.1</version>
+      <version>${commons.collections.version}</version>
     </dependency>
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
-      <version>1.5</version>
+      <version>${commons.codec.version}</version>
     </dependency>
     <dependency>
       <groupId>commons-configuration</groupId>
       <artifactId>commons-configuration</artifactId>
-      <version>1.6</version>
+      <version>${commons.configuration.version}</version>
       <exclusions>
         <exclusion>
           <groupId>commons-digester</groupId>
@@ -446,7 +486,7 @@
     <dependency>
       <groupId>commons-httpclient</groupId>
       <artifactId>commons-httpclient</artifactId>
-      <version>3.1</version>
+      <version>${commons.httpclient.version}</version>
       <exclusions>
         <exclusion>
           <groupId>commons-codec</groupId>
@@ -461,19 +501,19 @@
     <dependency>
       <groupId>commons-fileupload</groupId>
       <artifactId>commons-fileupload</artifactId>
-      <version>1.2.1</version>
+      <version>${commons.fileupload.version}</version>
     </dependency>
     <dependency>
       <groupId>commons-lang</groupId>
       <artifactId>commons-lang</artifactId>
-      <version>2.5</version>
+      <version>${commons.lang.version}</version>
     </dependency>
 
     <!-- simulation -->
     <dependency>
       <groupId>org.jbpm</groupId>
       <artifactId>jbpm-simulation</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+      <version>${jbpm.simulation.version}</version>
     </dependency>
 
     <!-- rest -->
@@ -509,35 +549,35 @@
     <dependency>
       <groupId>org.hibernate.javax.persistence</groupId>
       <artifactId>hibernate-jpa-2.0-api</artifactId>
-      <version>1.0.1.Final</version>
+      <version>${hib.jpa.2.api.version}</version>
     </dependency>
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
-      <version>3.4.0.GA</version>
+      <version>${hib.entitymanager.version}</version>
     </dependency>
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>3.3.2.GA</version>
+      <version>${hib.core.version}</version>
     </dependency>
     <dependency>
       <groupId>org.jboss.envers</groupId>
       <artifactId>jboss-envers</artifactId>
-      <version>1.2.3-hibernate-3.3</version>
+      <version>${hib.envers.version}</version>
     </dependency>
 
     <!-- test -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.9</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
-      <version>1.3.167</version>
+      <version>${h2.version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -828,7 +868,7 @@
             <phase>package</phase>
             <configuration>
               <classifier>jboss</classifier>
-              <packagingExcludes>WEB-INF/lib/antlr-2.7.7.jar,WEB-INF/lib/log4j-over-slf4j-1.5.8.jar,WEB-INF/lib/xercesImpl-2.9.1.jar,WEB-INF/lib/xml-apis-1.3.04.jar,WEB-INF/lib/xmlParserAPIs-2.0.2.jar</packagingExcludes>
+              <packagingExcludes>WEB-INF/lib/antlr-${antlr.version}.jar,WEB-INF/lib/log4j-over-slf4j-${log4j.version}.jar,WEB-INF/lib/xercesImpl-${xerces.version}.jar,WEB-INF/lib/xml-apis-1.3.04.jar,WEB-INF/lib/xmlParserAPIs-2.0.2.jar</packagingExcludes>
             </configuration>
           </execution>
           <execution>
