@@ -446,7 +446,7 @@
       <version>${jbpm.simulation.version}</version>
     </dependency>
 
-    <!-- rest -->
+    <!-- RESTeasy 
     <dependency>
       <groupId>org.jboss.resteasy</groupId>
       <artifactId>resteasy-jaxrs</artifactId>
@@ -456,10 +456,13 @@
           <artifactId>javassist</artifactId>
           <groupId>javassist</groupId>
         </exclusion>
-        <!-- conflicts with existing slf4j dependencies -->
         <exclusion>
           <artifactId>slf4j-simple</artifactId>
           <groupId>org.slf4j</groupId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
@@ -474,6 +477,7 @@
         </exclusion>
       </exclusions>
     </dependency>
+-->
 
     <!-- persistence -->
     <dependency>
@@ -505,20 +509,36 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.apache.abdera</groupId>
+      <artifactId>abdera-core</artifactId>
+      <version>${abdera.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.abdera</groupId>
+      <artifactId>abdera-client</artifactId>
+      <version>${abdera.version}</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
       <version>${h2.version}</version>
       <scope>test</scope>
     </dependency>
 
-    <!-- arquillian (see dep. mgmt. for versions) -->
+    <!-- arquillian/shrinkwrap (see dep. mgmt. for versions) shrinkwrap override necessary for 2.0.0 functionality (Maven.resolver()) -->
     <dependency>
       <groupId>org.jboss.arquillian.junit</groupId>
       <artifactId>arquillian-junit-container</artifactId>
       <scope>test</scope>
     </dependency>
-
-    <!-- Shrinkwrap -->
     <dependency>
       <groupId>org.jboss.shrinkwrap.descriptors</groupId>
       <artifactId>shrinkwrap-descriptors-api-javaee</artifactId>
@@ -559,6 +579,7 @@
       <classifier>jboss-as-7.0</classifier>
     </dependency>
 
+    <!-- dom4j prevent transitive dom4j deps from including the wrong stax:stax-api -->
     <dependency>
       <groupId>dom4j</groupId>
       <artifactId>dom4j</artifactId>
