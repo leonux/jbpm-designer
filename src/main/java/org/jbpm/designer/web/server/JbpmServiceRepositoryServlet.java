@@ -48,7 +48,6 @@ public class JbpmServiceRepositoryServlet extends HttpServlet {
 		String categoryToInstall = req.getParameter("category");
 		String repoURL = req.getParameter("repourl");
 		
-		
 		if(repoURL == null || repoURL.length() < 1) {
 			resp.setCharacterEncoding("UTF-8");
 			resp.setContentType("application/json");
@@ -145,8 +144,7 @@ public class JbpmServiceRepositoryServlet extends HttpServlet {
 						String widName = workitemsFromRepo.get(key).getName();
 						byte[] iconContent = null;
 						try {
-							iconContent = getImageBytes(new URL(iconFileURL)
-							.openStream());
+							iconContent = getImageBytes(new URL(iconFileURL).openStream());
 						} catch (Exception e1) {
 							_logger.error("Could not read icon image: " + e1.getMessage());
 						}

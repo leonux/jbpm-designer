@@ -13,7 +13,7 @@ import org.jbpm.designer.assets.persistence.AssetEntity;
 @Stateless
 public class AssetResourceBean implements AssetResource {
 
-    @PersistenceContext
+    @PersistenceContext(name="org.jbpm.designer")
     private EntityManager em;
 
     public Response createAsset(AssetXml asset, UriInfo uriInfo) {
