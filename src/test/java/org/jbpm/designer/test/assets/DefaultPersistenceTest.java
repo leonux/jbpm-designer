@@ -1,4 +1,4 @@
-package org.jbpm.designer.assets.services;
+package org.jbpm.designer.test.assets;
 
 import static junit.framework.Assert.*;
 import javax.persistence.EntityManager;
